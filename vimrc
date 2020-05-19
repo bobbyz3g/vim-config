@@ -13,6 +13,13 @@ syntax on
 
 au InsertLeave *.go,*.sh Write
 
+" 自动安装 vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+	      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin('~/.vim/plugged')
 
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
