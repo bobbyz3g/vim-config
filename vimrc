@@ -11,9 +11,12 @@ set autoindent
 syntax enable
 syntax on 
 
+" inoremap
+inoremap jk <Esc>
+
 au InsertLeave *.go,*.sh Write
 
-" 自动安装 vim-plug
+" auto install vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
 	      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
