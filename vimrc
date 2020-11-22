@@ -1,3 +1,4 @@
+" normal settings
 set nu
 set nocompatible
 
@@ -13,8 +14,6 @@ syntax on
 
 " inoremap
 inoremap jk <Esc>
-
-au InsertLeave *.go,*.sh Write
 
 " auto install vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -34,7 +33,9 @@ Plug 'jistr/vim-nerdtree-tabs'
 
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
-
+" deoplete
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-jedi'
 
 " 大纲式导航, Go 需要 https://github.com/jstemmer/gotags 支持
 Plug 'majutsushi/tagbar'
@@ -52,7 +53,9 @@ Plug 'dgryski/vim-godef'
 Plug 'iamcco/mathjax-support-for-mkdp'
 Plug 'iamcco/markdown-preview.vim'
 
+Plug 'scrooloose/nerdcommenter'
 call plug#end()
+
 
 set termguicolors
 colorscheme one " 主题
@@ -62,6 +65,8 @@ let g:go_fmt_command = "goimports"
 let g:go_autodetect_gopath = 1
 let g:go_list_type = "quickfix"
 
+
+let g:deoplete#enable_at_startup = 1
 " ===================================================================
 " Settings of go-vim
 " ===================================================================
