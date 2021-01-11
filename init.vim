@@ -53,7 +53,7 @@ let NERDTreeIgnore=['\.pyc','\~$','\.swp']
 
 let g:nerdtree_tabs_open_on_console_startup=1
 
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
     \ "Untracked" : "✭",
@@ -66,7 +66,7 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 
-let g:NERDTreeShowIgnoredStatus = 1
+let g:NERDTreeGitStatusShowIgnored= 1
 nmap <Leader>pwd :NERDTreeCWD<CR>
 
 :nn <Leader>1 1gt
