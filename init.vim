@@ -32,10 +32,42 @@ call plug#begin()
 
 	Plug 'jiangmiao/auto-pairs'
 
+	Plug 'fatih/vim-go'
+	
+	Plug 'Shougo/deoplete.nvim'
+
+	Plug 'roxma/nvim-yarp'
+
+	Plug 'roxma/vim-hug-neovim-rpc'
+	
+	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+	
+	Plug 'zchee/deoplete-go', { 'do': 'make'}
+
+	Plug 'majutsushi/tagbar'
+
+
+
 call plug#end()
 
+" themes
 set background=dark
 colorscheme solarized
+
+" tagbar
+nmap <F8> :TagbarToggle<CR>
+
+" deoplete-go settings
+let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+
+"================
+"deoplete
+"================
+let g:deoplete#enable_at_startup = 1
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
 
 " =================================================================== 
 " NERDTree
