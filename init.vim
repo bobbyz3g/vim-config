@@ -42,10 +42,7 @@ call plug#begin()
 	
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 	
-	Plug 'zchee/deoplete-go', { 'do': 'make'}
-
 	Plug 'majutsushi/tagbar'
-
 
 
 call plug#end()
@@ -57,10 +54,11 @@ colorscheme solarized
 " tagbar
 nmap <F8> :TagbarToggle<CR>
 
-" deoplete-go settings
-let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
-let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+" deoplete
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
 
+call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 "================
 "deoplete
 "================
