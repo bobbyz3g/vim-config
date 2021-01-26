@@ -44,17 +44,28 @@ call plug#begin()
 	
 	Plug 'majutsushi/tagbar'
 
-
+	Plug 'voldikss/vim-floaterm'
 call plug#end()
 
+" =========
+" floaterm
+" =========
+let g:floaterm_keymap_toggle = '<F12>'
+
+" =========
 " themes
+" =========
 set background=dark
 colorscheme solarized
 
+" =========
 " tagbar
+" =========
 nmap <F8> :TagbarToggle<CR>
 
+" =========
 " deoplete
+" =========
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
 
