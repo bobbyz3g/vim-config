@@ -20,4 +20,24 @@ yarn build
 ```
 :CocInstall coc-json coc-tsserver coc-go coc-shell
 ```
+5. Config lsp
 
+
+```
+:CocConfig
+```
+
+```
+{
+  "languageserver": {
+    "go": {
+      "command": "gopls",
+      "rootPatterns": ["go.work", "go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "usePlaceholders": true
+      }
+    }
+  }
+}
+```
